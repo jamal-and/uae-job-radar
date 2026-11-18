@@ -1,7 +1,8 @@
-// One run of the radar: read every board, keep UAE jobs, find the ones not seen before, send the
-// ones that match. The scheduled workflow runs this every ten minutes.
+// One run of the radar: read every board and every new alert email, keep UAE jobs, find the ones
+// not seen before, send the ones that match. The scheduled workflow runs this every ten minutes.
 import { companies, profile } from '../radar.config.ts';
 import { fetchAll } from './sources/index.ts';
+import { readInbox, type Inbox } from './email/inbox.ts';
 import { fingerprint, inUae, score } from './match.ts';
 import { loadState, saveState, type State } from './state.ts';
 import { digestMessage, jobMessage, telegram } from './telegram.ts';
@@ -21,12 +22,29 @@ const state: State = previous ?? { version: 1, seen: {} };
 
 const { jobs, failures } = await fetchAll(companies);
 for (const { company, error } of failures) console.warn(`! ${company.name} (${company.ats}/${company.slug}): ${error}`);
-if (failures.length === companies.length) {
-  console.error('Every board failed; nothing to do.');
+
+// Alert emails are optional: without a mailbox, the radar reads the boards only.
+const gmailUser = clean(process.env.GMAIL_USER);
+const gmailPassword = clean(process.env.GMAIL_APP_PASSWORD);
+let inbox: Inbox | null = null;
+if (gmailUser && gmailPassword) {
+  try {
+    inbox = await readInbox({ user: gmailUser, password: gmailPassword });
+    for (const alert of inbox.unparsed) console.warn(`! No jobs found in a ${alert.site} email: "${alert.subject}". Its layout may have changed.`);
+  } catch (error) {
+    console.warn(`! Mailbox: ${error instanceof Error ? error.message : error}`);
+  }
+}
+
+if (failures.length === companies.length && !inbox) {
+  console.error('Every source failed; nothing to do.');
   process.exit(1);
 }
 
-const uae = jobs.filter((job) => inUae(job, profile));
+// Alerts are set up for the UAE already, and often leave the location out, so they only drop jobs
+// whose location says somewhere else.
+const emailJobs = (inbox?.jobs ?? []).filter((job) => !job.location || inUae(job, profile));
+const uae = [...jobs.filter((job) => inUae(job, profile)), ...emailJobs];
 const fresh: Job[] = [];
 for (const job of uae) {
   const keys = [job.id, fingerprint(job)];
@@ -41,7 +59,9 @@ const scored = (list: Job[]) =>
     .filter(({ match }) => match.score >= profile.minScore)
     .sort((a, b) => b.match.score - a.match.score);
 
-console.log(`${jobs.length} jobs on ${companies.length - failures.length}/${companies.length} boards · ${uae.length} in the UAE · ${fresh.length} new`);
+console.log(
+  `${jobs.length} jobs on ${companies.length - failures.length}/${companies.length} boards · ${inbox ? `${inbox.jobs.length} in alert emails · ` : ''}${uae.length} in the UAE · ${fresh.length} new`,
+);
 
 if (firstRun) {
   // Everything is "new" the first time, so instead of a flood, one message with what's open now.
@@ -62,7 +82,9 @@ if (firstRun) {
 // A local run without Telegram is a preview: it leaves the state alone, so the real first run still
 // happens on the schedule.
 if (bot.dryRun) {
-  console.log('\nDry run (no TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID): state not saved.');
+  console.log('\nDry run (no TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID): state not saved, emails left unread.');
 } else {
   await saveState(STATE_PATH, state, now);
 }
+// Only now that the jobs are sent and remembered: a run that failed before this reads them again.
+await inbox?.done({ markRead: !bot.dryRun });

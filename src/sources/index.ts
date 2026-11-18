@@ -11,7 +11,7 @@ const greenhouse: Source = async (company) => {
   }>(`https://boards-api.greenhouse.io/v1/boards/${company.slug}/jobs`);
   return data.jobs.map((job) => ({
     id: id(company, job.id),
-    ats: 'greenhouse',
+    source: 'greenhouse',
     company: company.name,
     title: job.title,
     location: job.location?.name ?? '',
@@ -34,7 +34,7 @@ const lever: Source = async (company) => {
   >(`https://api.lever.co/v0/postings/${company.slug}?mode=json`);
   return data.map((job) => ({
     id: id(company, job.id),
-    ats: 'lever',
+    source: 'lever',
     company: company.name,
     title: job.text,
     location: (job.categories?.allLocations ?? [job.categories?.location ?? '']).join(' / '),
@@ -65,7 +65,7 @@ const ashby: Source = async (company) => {
     .filter((job) => job.isListed !== false)
     .map((job) => ({
       id: id(company, job.id),
-      ats: 'ashby',
+      source: 'ashby',
       company: company.name,
       title: job.title,
       location: [job.location, ...(job.secondaryLocations ?? []).map((l) => l.location), job.address?.postalAddress?.addressCountry]
@@ -84,7 +84,7 @@ const workable: Source = async (company) => {
   }>(`https://apply.workable.com/api/v1/widget/accounts/${company.slug}`);
   return data.jobs.map((job) => ({
     id: id(company, job.shortcode),
-    ats: 'workable',
+    source: 'workable',
     company: company.name,
     title: job.title,
     location: [job.city, job.state, job.country].filter(Boolean).join(', '),
@@ -109,7 +109,7 @@ const smartrecruiters: Source = async (company) => {
   }
   return jobs.map((job) => ({
     id: id(company, job.id),
-    ats: 'smartrecruiters',
+    source: 'smartrecruiters',
     company: company.name,
     title: job.name,
     location: job.location?.city ?? '',

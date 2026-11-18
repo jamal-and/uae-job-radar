@@ -13,12 +13,17 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const escapeHtml = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-const ATS_NAMES: Record<Job['ats'], string> = {
+const SOURCE_NAMES: Record<Job['source'], string> = {
   greenhouse: 'Greenhouse',
   lever: 'Lever',
   ashby: 'Ashby',
   workable: 'Workable',
   smartrecruiters: 'SmartRecruiters',
+  linkedin: 'LinkedIn',
+  bayt: 'Bayt',
+  indeed: 'Indeed',
+  naukrigulf: 'Naukrigulf',
+  gulftalent: 'GulfTalent',
 };
 
 function age(postedAt: string | undefined, now: Date): string | null {
@@ -38,7 +43,7 @@ export function jobMessage(job: Job, match: Score, now = new Date()): Message {
       `<b>${escapeHtml(job.title)}</b>`,
       escapeHtml(job.company),
       escapeHtml(details),
-      `<i>Score ${match.score} · ${escapeHtml(match.matched.join(', '))} · ${ATS_NAMES[job.ats]}</i>`,
+      `<i>Score ${match.score} · ${escapeHtml(match.matched.join(', '))} · ${SOURCE_NAMES[job.source]}</i>`,
     ].join('\n'),
     button: { text: 'Apply', url: job.url },
   };

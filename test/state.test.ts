@@ -20,7 +20,7 @@ test('no file means first run; saving drops old entries and sorts the rest', asy
 
 const job: Job = {
   id: 'ashby:acme:1',
-  ats: 'ashby',
+  source: 'ashby',
   company: 'Acme & Co',
   title: 'Senior <Flutter> Developer',
   location: 'Dubai',

@@ -6,7 +6,7 @@ import type { Job } from '../src/types.ts';
 
 const job = (fields: Partial<Job>): Job => ({
   id: 'greenhouse:acme:1',
-  ats: 'greenhouse',
+  source: 'greenhouse',
   company: 'Acme',
   title: 'Engineer',
   location: 'Dubai, United Arab Emirates',
@@ -54,7 +54,7 @@ test('keywords match whole words only', () => {
 
 test('the same opening on two boards shares a fingerprint', () => {
   const a = job({ id: 'greenhouse:binance:1', company: 'Binance', title: 'Senior Flutter Engineer', location: 'Dubai, UAE' });
-  const b = job({ id: 'lever:binance:x', ats: 'lever', company: 'Binance', title: 'Senior Flutter Engineer (Mobile)', location: 'Dubai' });
+  const b = job({ id: 'lever:binance:x', source: 'lever', company: 'Binance', title: 'Senior Flutter Engineer (Mobile)', location: 'Dubai' });
   assert.equal(fingerprint(a), fingerprint(b));
   assert.notEqual(fingerprint(a), fingerprint(job({ ...a, location: 'Abu Dhabi' })));
 });

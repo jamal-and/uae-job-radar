@@ -1,6 +1,9 @@
 /** The applicant tracking systems whose public job-board APIs the radar reads. */
 export type Ats = 'greenhouse' | 'lever' | 'ashby' | 'workable' | 'smartrecruiters';
 
+/** The job sites whose alert emails the radar reads. */
+export type Site = 'linkedin' | 'bayt' | 'indeed' | 'naukrigulf' | 'gulftalent';
+
 /** One company board to watch: which system it uses, and its name in that system's URLs. */
 export interface Company {
   name: string;
@@ -10,9 +13,10 @@ export interface Company {
 
 /** A job opening, in the same shape whatever system it came from. */
 export interface Job {
-  /** Stable across runs: `{ats}:{slug}:{id in that system}`. */
+  /** Stable across runs: `{ats}:{slug}:{id}` for a company board, `{site}:{id}` for a job site. */
   id: string;
-  ats: Ats;
+  /** Where the radar found it. */
+  source: Ats | Site;
   company: string;
   title: string;
   /** Free text from the source, such as "Dubai, United Arab Emirates". */
