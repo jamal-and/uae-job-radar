@@ -12,7 +12,9 @@ const STATE_PATH = new URL('../data/seen.json', import.meta.url).pathname;
 const BURST = 8;
 
 const now = new Date();
-const bot = telegram(process.env.TELEGRAM_BOT_TOKEN, process.env.TELEGRAM_CHAT_ID);
+// Pasted secrets often bring spaces, quotes, or a newline along.
+const clean = (value: string | undefined) => value?.trim().replace(/^["']|["']$/g, '') || undefined;
+const bot = telegram(clean(process.env.TELEGRAM_BOT_TOKEN), clean(process.env.TELEGRAM_CHAT_ID));
 const previous = await loadState(STATE_PATH);
 const firstRun = previous === null;
 const state: State = previous ?? { version: 1, seen: {} };
