@@ -37,9 +37,27 @@ export const companies: Company[] = [
   { name: 'DP World', ats: 'oracle', slug: 'ehpv.fa.em2/CX_1' },
 ];
 
-/** Job boards with a feed. RemoteDXB lists remote roles open to people living in the UAE. */
+/** Job boards searched as a whole rather than one company at a time. */
 export const feeds = {
+  /** RemoteDXB's feed of remote roles open to people living in the UAE. Every run. */
   remotedxb: true,
+  /**
+   * Workable's own job search (jobs.workable.com), which covers every company on Workable, searched
+   * with `profile.searchTerms`. Every 30 minutes, to stay well within its rate limit.
+   */
+  workableSearch: { enabled: true, everyMinutes: 30 },
+  /**
+   * Getro boards: the job boards investment funds run for the startups they back, with links to each
+   * company's own careers page. Searched with `profile.searchTerms` every 30 minutes. To add one,
+   * find `"network":{"id":"…"` in the source of the board's /jobs page.
+   */
+  getro: {
+    everyMinutes: 30,
+    boards: [
+      { name: 'Hub71', id: 9266 }, // jobs.hub71.com, Abu Dhabi's startup hub
+      { name: 'MEVP', id: 1034 }, // jobs.mevp.com, Middle East Venture Partners
+    ],
+  },
 };
 
 /**

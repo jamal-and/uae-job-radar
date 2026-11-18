@@ -94,3 +94,43 @@ test('JSearch: aggregators are dropped, and the company link wins over a job sit
   // A host that only ends like a trusted one is not trusted.
   assert.equal(bestLink({ job_id: '4', job_title: 'x', job_apply_link: 'https://fakelinkedin.com/jobs/1' }, config), null);
 });
+
+test('Workable job search: maps company, city, and country', async () => {
+  const { fromWorkableSearch } = await import('../src/sources/feeds.ts');
+  const job = fromWorkableSearch({
+    id: 'abc',
+    title: 'Senior Mobile Engineer',
+    url: 'https://jobs.workable.com/view/x/senior-mobile-engineer',
+    created: '2026-11-18T08:06:46.556Z',
+    workplace: 'hybrid',
+    location: { city: 'Dubai', subregion: 'Dubai', countryName: 'United Arab Emirates' },
+    company: { title: 'Fuse Energy' },
+  });
+  assert.equal(job.id, 'workable-search:abc');
+  assert.equal(job.company, 'Fuse Energy');
+  assert.equal(job.location, 'Dubai, United Arab Emirates');
+  assert.equal(job.country, 'ae');
+  assert.equal(job.remote, false);
+});
+
+test('Getro: UAE from the searchable locations, board name kept', async () => {
+  const { fromGetro } = await import('../src/sources/feeds.ts');
+  const job = fromGetro(
+    {
+      id: 15995468,
+      title: 'Full Stack Mobile Developer',
+      url: 'https://jobs.ashbyhq.com/acme/1',
+      created_at: 1_794_909_575,
+      work_mode: 'remote',
+      locations: ['Dubai - United Arab Emirates'],
+      searchable_locations: ['Dubai', 'United Arab Emirates', 'Asia'],
+      organization: { name: 'Acme' },
+    },
+    'Hub71',
+  );
+  assert.equal(job.id, 'getro-hub71:15995468');
+  assert.equal(job.via, 'Hub71');
+  assert.equal(job.country, 'ae');
+  assert.equal(job.remote, true);
+  assert.equal(fromGetro({ id: 1, title: 'x', url: 'https://x', searchable_locations: ['Egypt'] }, 'MEVP').country, undefined);
+});

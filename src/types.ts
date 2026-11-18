@@ -19,8 +19,8 @@ export interface Job {
   /** Stable across runs: `{ats}:{slug}:{id}` for a company board, `{site}:{id}` for a job site. */
   id: string;
   /** Where the radar found it. */
-  source: Ats | Site | 'remotedxb' | 'google';
-  /** The site Google found it on, for jobs from Google for Jobs. */
+  source: Ats | Site | 'remotedxb' | 'google' | 'getro';
+  /** The site Google found it on, or the Getro board it came from. */
   via?: string;
   company: string;
   title: string;

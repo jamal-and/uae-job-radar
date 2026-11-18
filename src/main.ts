@@ -5,7 +5,7 @@
 // feed, Google for Jobs through JSearch (every few hours, to fit its quota), and alert emails.
 import { companies, enterpriseEveryMinutes, feeds, jsearch as jsearchConfig, profile } from '../radar.config.ts';
 import { fetchAll } from './sources/index.ts';
-import { remoteDxb } from './sources/feeds.ts';
+import { getro, remoteDxb, workableSearch } from './sources/feeds.ts';
 import { jsearch } from './sources/jsearch.ts';
 import { readInbox, type Inbox } from './email/inbox.ts';
 import { fingerprint, inUae, score } from './match.ts';
@@ -46,6 +46,26 @@ if (feeds.remotedxb) {
   } catch (error) {
     warn('RemoteDXB', error);
   }
+}
+
+if (feeds.workableSearch.enabled && due('workableSearch', feeds.workableSearch.everyMinutes)) {
+  try {
+    feedJobs.push(...(await workableSearch(profile.searchTerms)));
+    markRan('workableSearch');
+  } catch (error) {
+    warn('Workable job search', error);
+  }
+}
+
+if (feeds.getro.boards.length && due('getro', feeds.getro.everyMinutes)) {
+  for (const board of feeds.getro.boards) {
+    try {
+      feedJobs.push(...(await getro(board, profile.searchTerms)));
+    } catch (error) {
+      warn(`Getro (${board.name})`, error);
+    }
+  }
+  markRan('getro');
 }
 
 // JSearch runs only when its interval has passed since the last successful search.
@@ -102,7 +122,8 @@ for (const job of uae) {
 
 /** The source a job came from: its id without the last part, such as `greenhouse:careem`. */
 const sourceOf = (job: Job) => job.id.slice(0, job.id.lastIndexOf(':'));
-const sourceName = (job: Job) => (job.source === 'remotedxb' ? 'RemoteDXB' : job.source === 'google' ? 'Google Jobs' : job.company);
+const sourceName = (job: Job) =>
+  job.source === 'remotedxb' ? 'RemoteDXB' : job.source === 'google' ? 'Google Jobs' : job.id.startsWith('workable-search:') ? 'Workable job search' : job.source === 'getro' ? `${job.via} job board` : job.company;
 
 const scored = (list: Job[]) =>
   list
@@ -112,7 +133,7 @@ const scored = (list: Job[]) =>
 
 const counts = [
   `${boardJobs.length} jobs on ${boards.length - failures.length}/${boards.length} boards${enterpriseDue ? '' : ' (Workday and Oracle not due)'}`,
-  feeds.remotedxb && `${feedJobs.length} on RemoteDXB`,
+  feedJobs.length && `${feedJobs.length} on RemoteDXB, Workable search, and Getro`,
   jsearchKey && (googleJobs.length || state.lastRun?.jsearch === now.toISOString() ? `${googleJobs.length} on Google Jobs` : 'Google Jobs not due'),
   inbox && `${inbox.jobs.length} in alert emails`,
   `${uae.length} in the UAE`,

@@ -5,6 +5,8 @@ Sends new job openings in the UAE that match your profile to Telegram, a few min
 Every ten minutes, a GitHub Actions run reads its sources, keeps the jobs in the UAE, and scores each new one against your profile:
 
 - the public job boards of the companies in [`radar.config.ts`](radar.config.ts), including large employers on Workday and Oracle Cloud;
+- [Workable's job search](https://jobs.workable.com), which covers every company on Workable, searched with your keywords every 30 minutes;
+- the job boards that investment funds run for the startups they back ([Hub71](https://jobs.hub71.com), [MEVP](https://jobs.mevp.com)), every 30 minutes;
 - the [RemoteDXB](https://www.remotedxb.com) feed of remote roles open to UAE residents;
 - Google for Jobs, which covers LinkedIn, Bayt, Indeed, GulfTalent, and company sites, through JSearch;
 - job-alert emails from LinkedIn, Bayt, Indeed, Naukrigulf, and GulfTalent.
@@ -14,6 +16,7 @@ Every ten minutes, a GitHub Actions run reads its sources, keeps the jobs in the
 
 ```
 company boards ─┐
+Workable search─┤
 RemoteDXB      ─┤
 Google Jobs    ─┼→ same shape → UAE only → not seen before → score → Telegram
 alert emails   ─┘

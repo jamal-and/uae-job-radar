@@ -23,6 +23,7 @@ const SOURCE_NAMES: Record<Job['source'], string> = {
   oracle: 'Oracle',
   remotedxb: 'RemoteDXB',
   google: 'Google Jobs',
+  getro: 'Getro',
   linkedin: 'LinkedIn',
   bayt: 'Bayt',
   indeed: 'Indeed',
