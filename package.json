@@ -1,0 +1,21 @@
+{
+  "name": "uae-job-radar",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sends new UAE job openings that match your profile to Telegram, minutes after they are posted.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "radar": "node --env-file-if-exists=.env src/main.ts",
+    "discover": "node scripts/discover.ts",
+    "chat-id": "node --env-file-if-exists=.env scripts/chat-id.ts",
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "typescript": "^5.9.3"
+  }
+}
