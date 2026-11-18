@@ -13,7 +13,8 @@
     "chat-id": "node --env-file-if-exists=.env scripts/chat-id.ts",
     "test": "node --test test/*.test.ts",
     "typecheck": "tsc",
-    "inbox": "node --env-file-if-exists=.env scripts/inbox.ts"
+    "inbox": "node --env-file-if-exists=.env scripts/inbox.ts",
+    "jsearch": "node --env-file-if-exists=.env scripts/jsearch.ts"
   },
   "devDependencies": {
     "@types/mailparser": "^3.9.0",

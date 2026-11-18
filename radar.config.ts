@@ -21,9 +21,48 @@ export const companies: Company[] = [
   { name: 'Namshi', ats: 'smartrecruiters', slug: 'namshi' },
   { name: 'Foodics', ats: 'workable', slug: 'foodics' },
   { name: 'SmartCrowd', ats: 'workable', slug: 'smartcrowd' },
+  { name: 'ElevenLabs', ats: 'ashby', slug: 'elevenlabs' },
+  { name: 'Poolside', ats: 'ashby', slug: 'poolside' },
+  { name: 'Sardine', ats: 'ashby', slug: 'sardine' },
+  { name: 'OKX', ats: 'greenhouse', slug: 'okx' },
+  { name: 'Rondo Energy', ats: 'greenhouse', slug: 'rondoenergy' },
+  { name: 'Toptal', ats: 'lever', slug: 'toptal' },
+
+  // Large employers, searched by `searchTerms` below. The slug is copied from the careers address:
+  // https://visa.wd5.myworkdayjobs.com/en-US/Visa/...  → 'visa.wd5/Visa'
+  // https://xyz.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/... → 'xyz.fa.em2/CX_1'
+  { name: 'Visa', ats: 'workday', slug: 'visa.wd5/Visa' },
+  { name: 'Thomson Reuters', ats: 'workday', slug: 'thomsonreuters.wd5/External_Career_Site' },
+  { name: 'Emirates NBD', ats: 'oracle', slug: 'fa-evlo-saasfaprod1.fa.ocs/CX_1' },
+  { name: 'DP World', ats: 'oracle', slug: 'ehpv.fa.em2/CX_1' },
 ];
 
+/** Job boards with a feed. RemoteDXB lists remote roles open to people living in the UAE. */
+export const feeds = {
+  remotedxb: true,
+};
+
+/**
+ * Google for Jobs through JSearch (RapidAPI), which covers LinkedIn, Bayt, Indeed, and more. Needs
+ * JSEARCH_API_KEY. Each query is one request, and the free plan allows 200 a month: three queries
+ * every 12 hours is about 180.
+ */
+export const jsearch = {
+  queries: ['flutter developer', 'mobile developer', 'mobile engineer'],
+  everyHours: 12,
+  /** How far back to look: 'today', '3days', 'week', or 'month'. */
+  datePosted: '3days',
+};
+
+/**
+ * Workday and Oracle boards are searched once an hour rather than every run: they belong to large
+ * companies that post less often, and their servers limit how often they can be asked.
+ */
+export const enterpriseEveryMinutes = 60;
+
 export const profile = {
+  /** What to search for on systems that are searched rather than read whole (Workday, Oracle). */
+  searchTerms: ['flutter', 'mobile', 'ios', 'android'],
   /** Points for each word or phrase found in the title or department. */
   keywords: {
     flutter: 10,

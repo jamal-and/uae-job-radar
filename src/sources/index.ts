@@ -1,7 +1,8 @@
 // One adapter per applicant tracking system. Each reads the system's public job-board API: the same
 // JSON the company's own careers page loads, with no key needed.
-import type { Ats, Company, Job, Source } from '../types.ts';
+import type { Ats, Company, Job, Source, SourceOptions } from '../types.ts';
 import { getJson } from '../http.ts';
+import { oracle, workday } from './enterprise.ts';
 
 const id = (company: Company, native: string | number) => `${company.ats}:${company.slug}:${native}`;
 
@@ -121,11 +122,17 @@ const smartrecruiters: Source = async (company) => {
   }));
 };
 
-export const sources: Record<Ats, Source> = { greenhouse, lever, ashby, workable, smartrecruiters };
+export const sources: Record<Ats, Source> = { greenhouse, lever, ashby, workable, smartrecruiters, workday, oracle };
+
+/** The systems whose boards are found by company name alone, which `npm run discover` can try. */
+export const guessable: Ats[] = ['greenhouse', 'lever', 'ashby', 'workable', 'smartrecruiters'];
 
 /** Reads every board at once. A board that fails is reported, and the rest still count. */
-export async function fetchAll(companies: Company[]): Promise<{ jobs: Job[]; failures: { company: Company; error: string }[] }> {
-  const results = await Promise.allSettled(companies.map((company) => sources[company.ats](company)));
+export async function fetchAll(
+  companies: Company[],
+  options: SourceOptions,
+): Promise<{ jobs: Job[]; failures: { company: Company; error: string }[] }> {
+  const results = await Promise.allSettled(companies.map((company) => sources[company.ats](company, options)));
   const jobs: Job[] = [];
   const failures: { company: Company; error: string }[] = [];
   results.forEach((result, i) => {

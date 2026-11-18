@@ -4,9 +4,8 @@
 //   npm run discover -- careem kitopi property-finder
 //
 // Each hit prints a line ready to paste into radar.config.ts, with how many of its jobs are in the UAE.
-import { sources } from '../src/sources/index.ts';
+import { guessable, sources } from '../src/sources/index.ts';
 import { inUae } from '../src/match.ts';
-import type { Ats } from '../src/types.ts';
 
 const slugs = process.argv.slice(2);
 if (slugs.length === 0) {
@@ -14,8 +13,8 @@ if (slugs.length === 0) {
   process.exit(1);
 }
 
-const tries = slugs.flatMap((slug) => (Object.keys(sources) as Ats[]).map((ats) => ({ slug, ats })));
-const results = await Promise.allSettled(tries.map(({ slug, ats }) => sources[ats]({ name: slug, ats, slug })));
+const tries = slugs.flatMap((slug) => guessable.map((ats) => ({ slug, ats })));
+const results = await Promise.allSettled(tries.map(({ slug, ats }) => sources[ats]({ name: slug, ats, slug }, { searchTerms: [] })));
 
 let found = 0;
 results.forEach((result, i) => {
