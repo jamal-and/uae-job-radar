@@ -53,7 +53,7 @@ const jsearchKey = clean(process.env.JSEARCH_API_KEY);
 let googleJobs: Job[] = [];
 if (jsearchKey && due('jsearch', jsearchConfig.everyHours * 60)) {
   try {
-    googleJobs = await jsearch(jsearchKey, jsearchConfig.queries, jsearchConfig.datePosted);
+    googleJobs = await jsearch(jsearchKey, jsearchConfig.queries, jsearchConfig.datePosted, jsearchConfig);
     markRan('jsearch');
   } catch (error) {
     warn('JSearch', error);

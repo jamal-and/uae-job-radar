@@ -43,15 +43,33 @@ export const feeds = {
 };
 
 /**
- * Google for Jobs through JSearch (RapidAPI), which covers LinkedIn, Bayt, Indeed, and more. Needs
- * JSEARCH_API_KEY. Each query is one request, and the free plan allows 200 a month: three queries
- * every 12 hours is about 180.
+ * Google for Jobs through JSearch (RapidAPI). Needs JSEARCH_API_KEY. Each query is one request, and
+ * the free plan allows 200 a month: three queries every 12 hours is about 180.
+ *
+ * In November 2026, Google's UAE results for mobile roles came almost entirely from aggregators that
+ * copy postings, which `trustedHosts` drops, so this source finds little for now. It costs nothing
+ * to leave on, and it picks up the occasional job on LinkedIn or a company site.
  */
 export const jsearch = {
   queries: ['flutter developer', 'mobile developer', 'mobile engineer'],
   everyHours: 12,
   /** How far back to look: 'today', '3days', 'week', or 'month'. */
   datePosted: '3days',
+  /**
+   * Only jobs with a link on one of these sites are sent; aggregators that copy postings (some ask
+   * for payment to apply) are dropped. Subdomains count, so 'greenhouse.io' covers boards.greenhouse.io.
+   */
+  trustedHosts: [
+    // Job sites
+    'linkedin.com', 'bayt.com', 'indeed.com', 'gulftalent.com', 'naukrigulf.com', 'glassdoor.com',
+    'glassdoor.ae', 'dubizzle.com', 'wellfound.com', 'remotedxb.com',
+    // Company careers systems
+    'greenhouse.io', 'lever.co', 'ashbyhq.com', 'workable.com', 'smartrecruiters.com', 'myworkdayjobs.com',
+    'oraclecloud.com', 'bamboohr.com', 'recruitee.com', 'teamtailor.com', 'breezy.hr', 'zohorecruit.com',
+    'personio.de', 'personio.com', 'jobvite.com', 'icims.com', 'successfactors.com', 'taleo.net',
+    // Recruitment agencies in the UAE
+    'michaelpage.ae', 'hays.ae', 'robertwalters.ae', 'charterhouseme.ae',
+  ],
 };
 
 /**
