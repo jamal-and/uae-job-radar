@@ -1,10 +1,10 @@
 {
   "version": 1,
   "lastRun": {
-    "enterprise": "2026-11-21T21:11:56.761Z",
+    "enterprise": "2026-11-22T01:26:04.991Z",
     "jsearch": "2026-11-21T21:11:56.761Z",
-    "workableSearch": "2026-11-21T21:11:56.761Z",
-    "getro": "2026-11-21T21:11:56.761Z"
+    "workableSearch": "2026-11-22T01:26:04.991Z",
+    "getro": "2026-11-22T01:26:04.991Z"
   },
   "sources": [
     "ashby:elevenlabs",
@@ -133,6 +133,7 @@
     "fp:armorcode|customer success engineer cse sr cse|uae": "2026-11-20T10:12:23.015Z",
     "fp:asico|ui ux lead|dubai": "2026-11-18T09:01:11.249Z",
     "fp:astro pak|senior director|uae": "2026-11-18T08:20:05.162Z",
+    "fp:atomic industries|lead finance analytics|uae": "2026-11-22T01:26:04.991Z",
     "fp:attivo partners|assistant controller|uae": "2026-11-21T07:37:20.155Z",
     "fp:auros|corporate account executive|uae": "2026-11-18T09:01:11.249Z",
     "fp:bbgc|senior frontend engineer|dubai": "2026-11-18T09:01:11.249Z",
@@ -308,6 +309,7 @@
     "fp:clera|expert talent pool generation and writing|uae": "2026-11-18T08:20:05.162Z",
     "fp:clera|founding business development representative|uae": "2026-11-18T08:20:05.162Z",
     "fp:clera|founding designer|uae": "2026-11-19T21:01:51.510Z",
+    "fp:clera|freelance engineer|uae": "2026-11-22T01:26:04.991Z",
     "fp:clera|industrial plant reliability maintenance expert ai evaluation|uae": "2026-11-19T21:01:51.510Z",
     "fp:clera|physical ai data collection associate|uae": "2026-11-18T08:20:05.162Z",
     "fp:clickhouse|senior software engineer postgres|uae": "2026-11-19T12:43:17.397Z",
@@ -688,6 +690,7 @@
     "fp:uasi|outpatient clinical documentation integrity client success manager|uae": "2026-11-18T08:20:05.162Z",
     "fp:uasi|outpatient critical access auditor|uae": "2026-11-18T08:20:05.162Z",
     "fp:uasi|professional fee surgical coder|uae": "2026-11-18T08:20:05.162Z",
+    "fp:uasi|senior consultant profee auditor quality and education|uae": "2026-11-22T01:26:04.991Z",
     "fp:uber|senior program manager autonomous vehicles field support|uae": "2026-11-18T08:20:05.162Z",
     "fp:ufp industries|project manager|uae": "2026-11-21T00:21:46.000Z",
     "fp:ultimate medical academy|director of career services|uae": "2026-11-18T08:20:05.162Z",
@@ -958,6 +961,7 @@
     "lever:toptal:b7b34aa0-ff60-4b22-b2d3-4e03e7b2d090": "2026-11-18T08:20:05.162Z",
     "oracle:ehpv.fa.em2/CX_1:26350": "2026-11-18T08:20:05.162Z",
     "remotedxb:2461432": "2026-11-18T08:20:05.162Z",
+    "remotedxb:3247461": "2026-11-22T01:26:04.991Z",
     "remotedxb:3590665": "2026-11-19T03:53:18.256Z",
     "remotedxb:3598697": "2026-11-18T08:20:05.162Z",
     "remotedxb:3601077": "2026-11-18T08:20:05.162Z",
@@ -1295,6 +1299,8 @@
     "remotedxb:3718586": "2026-11-21T21:11:56.761Z",
     "remotedxb:3718844": "2026-11-21T21:11:56.761Z",
     "remotedxb:3718857": "2026-11-21T21:11:56.761Z",
+    "remotedxb:3719606": "2026-11-22T01:26:04.991Z",
+    "remotedxb:3719806": "2026-11-22T01:26:04.991Z",
     "smartrecruiters:deliveryhero:744000100380245": "2026-11-18T06:06:49.024Z",
     "smartrecruiters:deliveryhero:744000104668570": "2026-11-18T06:06:49.024Z",
     "smartrecruiters:deliveryhero:744000104669132": "2026-11-18T06:06:49.024Z",
