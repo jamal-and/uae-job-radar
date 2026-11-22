@@ -1,10 +1,10 @@
 {
   "version": 1,
   "lastRun": {
-    "enterprise": "2026-11-22T16:42:27.543Z",
+    "enterprise": "2026-11-22T22:10:15.869Z",
     "jsearch": "2026-11-22T16:42:27.543Z",
-    "workableSearch": "2026-11-22T16:42:27.543Z",
-    "getro": "2026-11-22T16:42:27.543Z"
+    "workableSearch": "2026-11-22T22:10:15.869Z",
+    "getro": "2026-11-22T22:10:15.869Z"
   },
   "sources": [
     "ashby:elevenlabs",
@@ -503,6 +503,7 @@
     "fp:jing hau|web mobile developer cutting edge tech training|abu dhabi": "2026-11-18T08:20:05.162Z",
     "fp:kavak|mobile application developer|ajman": "2026-11-18T08:20:05.162Z",
     "fp:kavak|remote mobile app engineer|dubai": "2026-11-18T08:20:05.162Z",
+    "fp:kodiak solutions|sr data engineer|uae": "2026-11-22T22:10:15.869Z",
     "fp:kompetenza|gtm engineer customer facing advisor|uae": "2026-11-21T00:21:46.000Z",
     "fp:kroll|analyst economics|uae": "2026-11-18T15:26:53.292Z",
     "fp:lean technologies|senior software engineer|dubai": "2026-11-18T06:06:49.024Z",
@@ -1314,6 +1315,7 @@
     "remotedxb:3722363": "2026-11-22T16:42:27.543Z",
     "remotedxb:3722841": "2026-11-22T16:42:27.543Z",
     "remotedxb:3722842": "2026-11-22T16:42:27.543Z",
+    "remotedxb:3723522": "2026-11-22T22:10:15.869Z",
     "smartrecruiters:deliveryhero:744000100380245": "2026-11-18T06:06:49.024Z",
     "smartrecruiters:deliveryhero:744000104668570": "2026-11-18T06:06:49.024Z",
     "smartrecruiters:deliveryhero:744000104669132": "2026-11-18T06:06:49.024Z",
