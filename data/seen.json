@@ -1,10 +1,10 @@
 {
   "version": 1,
   "lastRun": {
-    "enterprise": "2026-11-22T08:42:39.280Z",
-    "jsearch": "2026-11-21T21:11:56.761Z",
-    "workableSearch": "2026-11-22T08:42:39.280Z",
-    "getro": "2026-11-22T08:42:39.280Z"
+    "enterprise": "2026-11-22T16:42:27.543Z",
+    "jsearch": "2026-11-22T16:42:27.543Z",
+    "workableSearch": "2026-11-22T16:42:27.543Z",
+    "getro": "2026-11-22T16:42:27.543Z"
   },
   "sources": [
     "ashby:elevenlabs",
@@ -527,6 +527,8 @@
     "fp:max accelerate technology|trainee account executive real estate sales to the future of ai|uae": "2026-11-22T08:42:39.280Z",
     "fp:maxaccelerate|figma to webflow landing pages developer|united arab emirates": "2026-11-18T09:01:11.249Z",
     "fp:maxaccelerate|figma to wordpress landing pages developer|united arab emirates": "2026-11-18T09:01:11.249Z",
+    "fp:maxana|lead engineer payment architect|uae": "2026-11-22T16:42:27.543Z",
+    "fp:maxanapay|payments integration architect|uae": "2026-11-22T16:42:27.543Z",
     "fp:mcg|product manager 1|uae": "2026-11-18T08:20:05.162Z",
     "fp:mcg|senior product manager|uae": "2026-11-21T00:21:46.000Z",
     "fp:medallion|team lead payer enrollment|uae": "2026-11-20T02:16:57.249Z",
@@ -671,6 +673,9 @@
     "fp:telnyx|account executive uae|uae": "2026-11-19T03:53:18.256Z",
     "fp:temenos|senior customer success manager|uae": "2026-11-19T21:01:51.510Z",
     "fp:terawatt infrastructure|contract specialist construction development|uae": "2026-11-19T12:43:17.397Z",
+    "fp:terrapower|fabrication oversight representative|uae": "2026-11-22T16:42:27.543Z",
+    "fp:terrapower|principal equipment supply manager|uae": "2026-11-22T16:42:27.543Z",
+    "fp:terrapower|principal nuclear licensing engineer|uae": "2026-11-22T16:42:27.543Z",
     "fp:terrascend|senior accounts payable specialist|uae": "2026-11-18T08:20:05.162Z",
     "fp:texana bank n a|mortgage loan originator team lead br 26|uae": "2026-11-20T02:16:57.249Z",
     "fp:the greater change|head of technology|dubai": "2026-11-18T09:01:11.249Z",
@@ -745,6 +750,7 @@
     "google:RkxqaWpWTTFLSnlqQVh2S0FBQUFBQT09OkVzd0JDb3dCUVVSRVlsZGxZVGRxWmtnM1gyRTRTWE5CYTJ0V2EweFpaVmRSU1RCdVgyZEJhVWg2V1Uxd05FdERhMVZ4WmpFMVpFZ3diRWR1ZFRkc05XeE1ObUZMWDNGSk0wZFZlR0U1V2toRVptOXRWblJwWldnNFpGQlJjRWhOTm0xNk5XaDBaVEpwZURoNWFXWkxRMWRXVWpWaVRUWmlSa3R5VTBFNFJIQlJXazB5YzBKbU5UVkhYME0zVDI1TFQza1NGM2RzWHpsaGNsaEtSSFUyVnpWUFZWQndPVFkxTFZGdkdpSkJTRTR3UlRkSVRIVTNieTFITkdSV1pGODVhVGwxTUZKM1drazBjREpJTkd4MzowYmM2MDExOA": "2026-11-18T08:20:05.162Z",
     "google:S2tBamRBSmoxOWc4clRsN0FBQUFBQT09OkVzc0JDb3dCUVVSRVlsZGxXVXh2YWxGcVpqWlpabWxwUkhKNWN6RjZNMWxTYjBSNmIwSkJTbUZWTnpCRGEyTkxWRkZSUldWNmREbEVSbU5YWTJkM1YyTkRRMWhEZEhSclNYUlZhekl3Wld4M1dDMWpUMDF1Ulc5Tk4xSlZhelJEWTJzMVR6ZFlTMFJwY1dGd2VGTkRWM0JmVldGaVN6RnhjelJrWkhod2JHSkVaVmhRZFhRNVJFZFVTemg0YUVjeFdsTVNGbmN4WHpsaGIwTldTVGd5UlRWUFZWQnlObUo2VlVFYUlrRklUakJGTjBkNWJqWndZVk5NVUV4TmNWWXRibXN4Y1c1ME1ub3dXbTFMVEVFOjgzZDJjMzRj": "2026-11-18T08:20:05.162Z",
     "google:SExuV0R0anI5aE8yTi1KMEFBQUFBQT09OkVzd0JDb3dCUVVSRVlsZGxXVEF0Wmxkc1VXaHJhQzFGZFhReGJUUk5jVXRLWm5GbWFUVllVREIwWDJSbWEwVlRjMXAzYjA1d1MyMXhhbEJ4VkRreVFrNUdNa2RxVFd0TFltWkxUVmx6YkhWbWRIUnZabWRhY2poNVdXYzVWRkY0YUdJMVpDMXlXWGR6TjBoM1NFOUlUVXBMY205emFGbFNZMmx2TTJjeU1EZEphWEpGZVZCbGJXbEZjVWgyV2xWWWJXa1NGMVZWYjBKaE9VdzRRemRoZEcxMGExQjFjWEkxTkVFd0dpSkJTRTR3UlRkSVUyWkZWbWd4ZUdkVlVGbHBlSEZrTXpCVVVIQlNNbFZpVGxWbjoyMTk1YmZlNA": "2026-11-21T07:37:20.155Z",
+    "google:SExuV0R0anI5aE8yTi1KMEFBQUFBQT09OkVzd0JDb3dCUVVSRVlsZGxZbEIwVW1kd1ZrMU9VRmxzY1hCRGNEbHRaMjFqTVhWTVExWmhkVUl4VW04eVEyUkdiV2s1Y0RCelNubzRVazltUWw4elNUZ3pSak5DZUhkWlN6WmhYMDExVUhwSFdGOWFaVjlzTTJ4QlJFZG1NMjVHWTBrd2MzRm9VMW81Y1RSbVRsWlFWR0pxVGpCNmNERldaVXg1WjFKTWRpMWlkMHBUTkZWWmFGOWtSV2xOVW5RMVRFVVNGMnhvYzBSaE9FY3lSWEoxV25kaWExQnhkbTVFTWxFNEdpSkJTRTR3UlRkR2JFZGFZM3BVWDNac1praEhSSGR4ZVZOVk5tbE5SMmREZUZsMzoyMTk1YmZlNA": "2026-11-22T16:42:27.543Z",
     "google:SExuV0R0anI5aE8yTi1KMEFBQUFBQT09OkVzd0JDb3dCUVVSRVlsZGxZVkZsZWpaR1JHTjJXbkU1VWs0NVVEVmZZVE55YTJ4RGJrSjFjSEpoU1VSQ1pEVk9WVnBuT0ZZM2FWaDBOak5rWnpCcmExbGZaa05UZWtoWFZubzVTa1ZhU1ZNM01WUlpVRmQxUzAxdk5tUTBkM1UxYlV0U04ydGlRbG94YTNkVU1FdElkRkJPVURFeFJXUlRTMk54YjJvMllrbFdkMGxCWkRKWVZXMHRUR3RDYXpaaFIwRVNGMUUxVVVGaE5XNVVUVXA1WmpCUVJWQnlOazlrTUVGdkdpSkJTRTR3UlRkSU9HZzBkRVF6VEROTVVHSTBkbUZDT1hKSE5URTBTMlZDTFVGUjoyMTk1YmZlNA": "2026-11-20T18:40:20.520Z",
     "google:SExuV0R0anI5aE8yTi1KMEFBQUFBQT09OkVzd0JDb3dCUVVSRVlsZGxZVWRYUlVnNGNrMHdlbGQ0TTNwelp6WnJTbGhzWm5ZeWFGbGpTMlV4TVV0Zk1UZE5kMjh6YTFoUE4zWmtRVUYwZGpVNGIzWnZaVmhRZUUxaGFrNUpkMEpsU0doeVZscHliMWd4YTBaS2JHMVNhMU5rVlV0NFpXZHhTVXhUUjJOa1YwbFViVWx2VGtKTGIwa3laVE5ET1RNNVpqTmZNQzB0Ykhsa05WaFRUVXBxYzAxRFZXSVNGMU4zYTBOaE5ucE5TbVZmU210UVNWQXlXVTlXY1VGakdpSkJTRTR3UlRkSFlYZGhkVmRyVERSdGNtWlFiQzFUWDIxSk1WVnNOMmhLZWxWQjoyMTk1YmZlNA": "2026-11-21T21:11:56.761Z",
     "google:TDZfVm9ScGtYWnZaeWNRc0FBQUFBQT09OkVzd0JDb3dCUVVSRVlsZGxZVVkxTmpWNk5YVTBZbUoyUkhoRk9VOUNVV2hJUVhsMFluWjRaekpvTW5sUVkwa3RXVmRZVUZKMVQwUjNTelIzYzIxVFNGVkRNbGR4VEhkNU5HcHFXaTFUWVhOQlMxQm1TRXB4VEU0M1drZG1jVlp6UW1STGRHNUJjWEpQT1c0dFZWVk1lalpETVU1emFtWXdjbkZaYURCU09HaEVOeTFNZWxsQk9HSm1NVjltY3pOR2VHZ1NGM2RzWHpsaGNsaEtSSFUyVnpWUFZWQndPVFkxTFZGdkdpSkJTRTR3UlRkSFVVYzBkMHR5UjNWVE5XRTNlV0phTkZRMGNHaE1WR2RGTW1SMzpmZmU1MDRlMg": "2026-11-18T08:20:05.162Z",
@@ -1303,6 +1309,11 @@
     "remotedxb:3719606": "2026-11-22T01:26:04.991Z",
     "remotedxb:3719806": "2026-11-22T01:26:04.991Z",
     "remotedxb:3721326": "2026-11-22T08:42:39.280Z",
+    "remotedxb:3722328": "2026-11-22T16:42:27.543Z",
+    "remotedxb:3722362": "2026-11-22T16:42:27.543Z",
+    "remotedxb:3722363": "2026-11-22T16:42:27.543Z",
+    "remotedxb:3722841": "2026-11-22T16:42:27.543Z",
+    "remotedxb:3722842": "2026-11-22T16:42:27.543Z",
     "smartrecruiters:deliveryhero:744000100380245": "2026-11-18T06:06:49.024Z",
     "smartrecruiters:deliveryhero:744000104668570": "2026-11-18T06:06:49.024Z",
     "smartrecruiters:deliveryhero:744000104669132": "2026-11-18T06:06:49.024Z",
