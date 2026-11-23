@@ -1,10 +1,10 @@
 {
   "version": 1,
   "lastRun": {
-    "enterprise": "2026-11-22T22:10:15.869Z",
+    "enterprise": "2026-11-23T02:54:58.775Z",
     "jsearch": "2026-11-22T16:42:27.543Z",
-    "workableSearch": "2026-11-22T22:10:15.869Z",
-    "getro": "2026-11-22T22:10:15.869Z"
+    "workableSearch": "2026-11-23T02:54:58.775Z",
+    "getro": "2026-11-23T02:54:58.775Z"
   },
   "sources": [
     "ashby:elevenlabs",
@@ -193,6 +193,7 @@
     "fp:binance|vip institutional sales mena|united arab emirates": "2026-11-18T06:06:49.024Z",
     "fp:binance|wallet operations deputy uae|united arab emirates": "2026-11-18T06:06:49.024Z",
     "fp:bish s rv|licensed property casualty insurance producer fully remote|uae": "2026-11-19T03:53:18.256Z",
+    "fp:blackbird health|contract clinical recruiter|uae": "2026-11-23T02:54:58.775Z",
     "fp:blackbird health|technical program manager|uae": "2026-11-20T02:16:57.249Z",
     "fp:blackstone eit|full stack engineer|dubai": "2026-11-18T09:01:11.249Z",
     "fp:blackstone eit|information technology support engineer|dubai": "2026-11-18T09:01:11.249Z",
@@ -325,6 +326,7 @@
     "fp:decentralized masters|ad creative strategist|uae": "2026-11-21T15:37:49.542Z",
     "fp:deeplight|data modelling engineering lead|abu dhabi": "2026-11-18T09:01:11.249Z",
     "fp:deeplight|data modelling engineering lead|dubai": "2026-11-18T09:01:11.249Z",
+    "fp:definitive healthcare|senior associate account executive diversified|uae": "2026-11-23T02:54:58.775Z",
     "fp:definitive healthcare|senior associate sales executive diversified|uae": "2026-11-19T21:01:51.510Z",
     "fp:definium therapeutics|associate director pharmacovigilance operations|uae": "2026-11-18T08:20:05.162Z",
     "fp:deliveroo|business development manager abu dhabi|dubai": "2026-11-18T06:06:49.024Z",
@@ -494,6 +496,7 @@
     "fp:innovationsglobal|senior mobile qa automation engineer on site abu dhabi|united arab emirates": "2026-11-18T08:20:05.162Z",
     "fp:innovationsglobal|senior qa automation engineer mobile|abu dhabi": "2026-11-18T08:20:05.162Z",
     "fp:insightsoftware|enterprise account executive|uae": "2026-11-18T08:20:05.162Z",
+    "fp:institute of free technology|devops engineer|uae": "2026-11-23T02:54:58.775Z",
     "fp:integon|process central services associate|uae": "2026-11-18T08:20:05.162Z",
     "fp:integon|senior data scientist|uae": "2026-11-18T08:20:05.162Z",
     "fp:integrated specialty coverages llc|senior manager premium support|uae": "2026-11-18T08:20:05.162Z",
@@ -970,6 +973,8 @@
     "oracle:ehpv.fa.em2/CX_1:26350": "2026-11-18T08:20:05.162Z",
     "remotedxb:2461432": "2026-11-18T08:20:05.162Z",
     "remotedxb:3247461": "2026-11-22T01:26:04.991Z",
+    "remotedxb:3256086": "2026-11-23T02:54:58.775Z",
+    "remotedxb:3550706": "2026-11-23T02:54:58.775Z",
     "remotedxb:3590665": "2026-11-19T03:53:18.256Z",
     "remotedxb:3598697": "2026-11-18T08:20:05.162Z",
     "remotedxb:3601077": "2026-11-18T08:20:05.162Z",
@@ -1060,6 +1065,7 @@
     "remotedxb:3627581": "2026-11-18T08:20:05.162Z",
     "remotedxb:3627649": "2026-11-18T08:20:05.162Z",
     "remotedxb:3627798": "2026-11-18T08:20:05.162Z",
+    "remotedxb:3628051": "2026-11-23T02:54:58.775Z",
     "remotedxb:3628364": "2026-11-18T08:20:05.162Z",
     "remotedxb:3628365": "2026-11-18T08:20:05.162Z",
     "remotedxb:3629086": "2026-11-18T08:20:05.162Z",
